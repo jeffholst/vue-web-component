@@ -1,4 +1,4 @@
-# Welcome to vue-web-component
+# Overview
 
 This is a template project for rapid Vue web components development.  A typical use case is for building components with Vue that can easily be used in other projects with a different or no JavaScript framework.
 
@@ -41,7 +41,7 @@ This is a template project for rapid Vue web components development.  A typical 
 (*) files copied during build to dist/
 ```
 
-## :octocat: GitHub Pages
+## 📃 GitHub Pages
 
 GitHub Pages is triggerd by the **github-pages** branch.
 
