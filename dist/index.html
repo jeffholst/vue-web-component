@@ -1,0 +1,67 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--<title> modified by gulp during build--><title>Production Build</title>
+  <!--added by gulp during build--><script src="https://unpkg.com/vue@3.2.37/dist/vue.global.prod.js"></script></head>
+  <body>
+    <!--modified by gulp during build--><script data-id="scriptFile" type="text/javascript" src="vue-custom-component.umd.js"></script>
+    <div id="app">
+      <h1>
+        <a href="https://vuejs.org/guide/extras/web-components.html">Vue Web Components</a>
+      </h1>
+      <div class="block">
+        <div class="description">Vue Web Component 1 - start:default</div>
+        <custom-button id="button1">
+          <span slot="prefix">Button 1: </span>
+        </custom-button>
+      </div>
+      <div class="block">
+        <div class="description">Vue Web Component 2 - start:20</div>
+        <custom-button id="button2" start="20">
+          <span slot="prefix">Button 2: </span>
+        </custom-button>
+      </div>
+      <div class="block">
+        <div class="description">External button to reset all values</div>
+        <button id="resetButton">Reset</button>
+      </div>
+      <div class="block">
+        <div class="description">External spans updated with callback</div>
+        <div>Button 1 Value: <span id="button1Value"></span></div>
+        <div>Button 2 Value: <span id="button2Value"></span></div>
+      </div>
+      <script>
+        function componentCallback(id, msg) {
+          // called from the component
+          const el = document.getElementById(`${id}Value`)
+          el.innerHTML = msg
+        }
+
+        // initialize callbacks once page is loaded
+        document.addEventListener(
+          'DOMContentLoaded',
+          function () {
+            buttons = document.querySelectorAll('custom-button')
+            buttons.forEach((button) => {
+              button._instance.exposed.addCallback(componentCallback)
+            })
+          },
+          false
+        )
+
+        // wire-up reset button
+        const resetButton = document.getElementById('resetButton')
+        resetButton.addEventListener('click', () => {
+          buttons = document
+            .querySelectorAll('custom-button')
+            .forEach((button) => {
+              button._instance.exposed.reset()
+            })
+        })
+      </script>
+    </div>
+  
+
+</body></html>
