@@ -2,7 +2,7 @@
 
 This is a template project for rapid Vue web components development.  A typical use case is for building components with Vue that can easily be used in other projects with a different or no JavaScript framework.
 
-🔍 [Demo]((https://jeffholst.github.io/vue-web-component/dist/))
+🔍 [Demo](https://jeffholst.github.io/vue-web-component/dist/)
 
 ## 📌 Features
 
