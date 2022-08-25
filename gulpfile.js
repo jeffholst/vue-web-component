@@ -2,6 +2,9 @@ const gulp = require('gulp')
 const fs = require('fs')
 const jsdom = require('jsdom')
 const pjson = require('./package.json')
+const simpleGit = require('simple-git')
+
+const git = simpleGit()
 
 const { JSDOM } = jsdom
 
@@ -50,4 +53,14 @@ async function copyFilesToDist(cb) {
   cb()
 }
 
+async function gitHubPages(cb) {
+  console.log('Deploying to GitHub Pages...')
+  await git.checkout('github-pages')
+  await git.merge('main')
+  await git.push('origin', 'github-pages')
+  await git.checkout.('main')
+  cb()
+}
+
 exports.copyFilesToDist = gulp.series(copyFilesToDist)
+exports.gitHubPages = gulp.series(gitHubPages)

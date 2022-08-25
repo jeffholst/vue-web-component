@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build --emptyOutDir && gulp copyFilesToDist",
-    "preview": "vite preview --open"
+    "preview": "vite preview --open",
+    "ghp": "gulp gitHubPages"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
     "gulp": "^4.0.2",
     "jsdom": "^20.0.0",
     "prettier": "^2.7.1",
+    "simple-git": "^3.13.0",
     "vite": "^2.4.4"
   },
   "dependencies": {
