@@ -57,8 +57,8 @@ async function gitHubPages(cb) {
   console.log('Deploying to GitHub Pages...')
   await git.checkout('github-pages')
   await git.merge('main')
-  await git.push('origin', 'github-pages')
-  await git.checkout.('main')
+  //await git.push('origin', 'github-pages')
+  await git.checkout('main')
   cb()
 }
 
