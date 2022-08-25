@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-component",
-  "title": "Production Build",
+  "title": "vwc Production",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --open",
