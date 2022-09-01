@@ -4,6 +4,15 @@ This is a template project for rapid Vue web components development.  A typical 
 
 🔍 [Demo](https://jeffholst.github.io/vue-web-component/dist/)
 
+## 👀 Tips
+
+- if you copy this repo to a monorepo be sure to delete the .git folder.  
+- if you forget to delete the .git folder before checking in, you will need delete the .git folder, clear git cache, and re-check in the folder:
+
+```txt
+git rm --cached folder_name"
+```
+
 ## 📌 Features
 
 - built with 💖 using Vue 3 + Vite
